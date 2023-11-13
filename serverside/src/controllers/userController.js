@@ -29,7 +29,14 @@ async function signIn(user) {
 }
 
 
+async function me(userPartial) {
+    const user = await User.findById(userPartial.id)
+    return user
+}
+
+
 module.exports = {
     signUp,
-    signIn
+    signIn,
+    me
 }
